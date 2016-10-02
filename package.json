@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/cesarrodas/Contacts-App/issues"
   },
-  "homepage": "https://github.com/cesarrodas/Contacts-App#readme"
+  "homepage": "https://github.com/cesarrodas/Contacts-App#readme",
+  "devDependencies": {
+    "bower": "^1.7.9"
+  }
 }
