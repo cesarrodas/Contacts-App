@@ -1,0 +1,19 @@
+<!-- <h1>{{contacts}}</h1> -->
+<div class="container">
+  <ul class="nav nav-tabs" >
+    <li class="active" ><a ui-sref="contact.contacts">Contacts</a></li>
+    <li><a ui-sref="contact.create">Create</a></li>
+  </ul>
+</div>
+<div>
+<h2>{{contacts[keys[0]].name}}</h2>
+<div ng-repeat="contact in contacts">
+	{{contact}}
+	{{contact.name}}
+	{{contact.age}}
+	{{contact.bio}}
+</div>
+<button ng-click="addContact()" class="btn btn-success">Create</button>
+<button ng-click="changeContact()" class="btn btn-info">Update</button>
+<button ng-click="delContact()" class="btn btn-danger">Delete</button>
+</div>

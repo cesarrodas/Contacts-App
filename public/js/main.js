@@ -1,4 +1,16 @@
-angular.module('contactApp', ['contactApp.models.contacts'])
+angular.module('contactApp', ['ui.router', 'contacts', 'createContact','contactApp.models.contacts'])
+
+.config(function ($stateProvider, $urlRouterProvider) {
+
+	$stateProvider
+		.state('contact', {
+			url: '',
+			abstract: true
+	});
+
+	$urlRouterProvider.otherwise('/');
+
+})
 
 .controller('mainController', ['$scope', 'ContactsService', function($scope, ContactsService){
 	$scope.keys;
@@ -39,6 +51,7 @@ angular.module('contactApp', ['contactApp.models.contacts'])
 		});
 	}
 
+	// Updates all the contacts
 	contactsRef.on("value", function(snapshot) {
 		$scope.keys = Object.keys(snapshot.val());
 		$scope.contacts = snapshot.val();
