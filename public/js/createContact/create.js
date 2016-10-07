@@ -5,12 +5,17 @@ angular.module('createContact', [])
 			url: '/create',
 			views: {
 				'main@': {
-					controller: "CreateCtrl",
+					controller: "CreateCtrl as createCtrl",
 					templateUrl: "../../html/createContact/create.tmpl.html"
 				}
 			}
 		});
 })
-.controller('CreateCtrl', function CreateCtrl(){
-	var createCtrl = this;
-});
+.controller('CreateCtrl', ['$scope', function CreateCtrl($scope){
+	$scope.form = {};
+
+	$scope.onSubmit = function () {
+		console.log("Hey i'm submitted!");
+		console.log($scope.form);
+	};
+}]);

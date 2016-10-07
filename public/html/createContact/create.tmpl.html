@@ -4,18 +4,45 @@
     <li class="active"><a ui-sref="contact.create">Create</a></li>
   </ul>
 </div>
-<br/><br/>
+<br/><br/><br/>
 <div>
-	<form class="col-sm-6 col-sm-offset-3">
+	<form class="col-sm-6 col-sm-offset-3" name="createForm" novalidate="novalidate">
 
 		<div class="form-group">
     	<label for="nameInput">Name</label>
-    	<input type="name" class="form-control" id="nameInput" placeholder="Name">
+    	<input type="name" class="form-control" ng-model="form.name" id="nameInput" aria-describedby="name textbox" placeholder="Name"/>
   	</div>
 
 	  <div class="form-group">
 	    <label for="emailInput">Email address</label>
-	    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email">
+	    <input type="email" class="form-control" ng-model="form.email" id="emailInput" aria-describedby="email textbox" placeholder="Enter email"/>
 	  </div>
+
+	 	<div class="form-group">
+	    <label for="phoneInput">Phone Number</label>
+	    <input type="phone" class="form-control" ng-model="form.phone" id="phoneInput" aria-describedby="phone textbox" placeholder="Enter phone number"/>
+	  </div>
+
+	  <div class="form-group">
+	    <label for="adressInput">Adress</label>
+	    <input type="adress" class="form-control" ng-model="form.adress" id="adressInput" aria-describedby="adress textbox" placeholder="Enter Adress"/>
+	  </div>
+
+	  <div class="form-group">
+	    <label for="bioInput">Bio</label>
+	    <textarea type="bio" class="form-control" ng-model="form.bio" id="bioInput" aria-describedby="bio textbox" placeholder="Describe your contact..."></textarea>
+	  </div>
+
+	  <div class="form-group">
+	    <label for="avatarInput">Avatar</label>
+	    <input type="avatar" class="form-control" ng-model="form.avatar" id="avatarInput" aria-describedby="avatar field" placeholder="Enter an avatar link... "/>
+	  </div>
+
+	  <div class="form-group">
+	  	<button class="btn btn-primary" ng-click="onSubmit()">Add Contact</button>
+	  </div>
+
 	</form>
+
 </div>
+<pre class="col-sm-6">{{createForm}}</pre>
