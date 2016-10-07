@@ -20,8 +20,10 @@
 	</head>
 
 	<body ng-controller="mainController">
+		<h1 id="title">Contacts App</h1>
+		<br/>
 		<div class="col-sm-6 col-sm-offset-3" ng-init="getAllContacts()">
-		<main ui-view="main"></main>
+			<main class="col-sm-12" ui-view="main"></main>
 		</div>
 	</body>
 </html>

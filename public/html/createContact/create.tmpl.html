@@ -1,10 +1,21 @@
-<div class="container">
+<div class="container col-sm-12">
   <ul class="nav nav-tabs" >
     <li><a ui-sref="contact.contacts">Contacts</a></li>
     <li class="active"><a ui-sref="contact.create">Create</a></li>
   </ul>
 </div>
+<br/><br/>
 <div>
-	<h1>THE FORM WILL GO HERE</h1>
-	<h2>YOU WILL BE ABLE TO CREATE CONTACTS HERE</h2>
+	<form class="col-sm-6 col-sm-offset-3">
+
+		<div class="form-group">
+    	<label for="nameInput">Name</label>
+    	<input type="name" class="form-control" id="nameInput" placeholder="Name">
+  	</div>
+
+	  <div class="form-group">
+	    <label for="emailInput">Email address</label>
+	    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email">
+	  </div>
+	</form>
 </div>
