@@ -6,43 +6,70 @@
 </div>
 <br/><br/><br/>
 <div>
-	<form class="col-sm-6 col-sm-offset-3" name="createForm" novalidate="novalidate">
+	<form class="col-sm-6 col-sm-offset-3" name="contactForm" novalidate="novalidate">
 
-		<div class="form-group">
+		<div class="form-group" ng-class="{
+			'has-error':!contactForm.name.$valid && (!contactForm.name.$pristine || contactForm.$submitted),
+			'has-success':contactForm.name.$valid && (!contactForm.$pristine || contactForm.$submitted)
+		}">
     	<label for="nameInput">Name</label>
-    	<input type="name" class="form-control" ng-model="form.name" id="nameInput" aria-describedby="name textbox" placeholder="Name"/>
+    	<input type="name" class="form-control" ng-model="form.name" id="nameInput" name="name" aria-describedby="name textbox" required="required" placeholder="Name"/>
+    	<p class="help-block" ng-show="contactForm.name.$error.required && !contactForm.name.$pristine">Please enter a name.</p>
   	</div>
 
-	  <div class="form-group">
+	  <div class="form-group" ng-class="{
+			'has-error':!contactForm.email.$valid && (!contactForm.email.$pristine || contactForm.$submitted),
+			'has-success':contactForm.email.$valid && (!contactForm.$pristine || contactForm.$submitted)
+		}">
 	    <label for="emailInput">Email address</label>
-	    <input type="email" class="form-control" ng-model="form.email" id="emailInput" aria-describedby="email textbox" placeholder="Enter email"/>
+	    <input type="email" class="form-control" ng-model="form.email" id="emailInput" name="email" aria-describedby="email textbox" required="required" placeholder="Enter email"/>
+	    <p class="help-block" ng-show="contactForm.email.$error.required && !contactForm.email.$pristine">Please enter an email.</p>
+	    <p class="help-block" ng-show="contactForm.email.$error.email && !contactForm.email.$pristine">Please enter a valid email.</p>
 	  </div>
 
-	 	<div class="form-group">
+	 	<div class="form-group" ng-class="{
+			'has-error':!contactForm.phone.$valid && (!contactForm.phone.$pristine || contactForm.$submitted),
+			'has-success':contactForm.phone.$valid && (!contactForm.$pristine || contactForm.$submitted)
+		}">
 	    <label for="phoneInput">Phone Number</label>
-	    <input type="phone" class="form-control" ng-model="form.phone" id="phoneInput" aria-describedby="phone textbox" placeholder="Enter phone number"/>
+	    <input type="number" class="form-control" ng-model="form.phone" ng-maxlength="10" id="phoneInput" name="phone" aria-describedby="phone textbox" required="required" placeholder="Enter phone number"/>
+	    <p class="help-block" ng-show="contactForm.phone.$error.required && !contactForm.phone.$pristine">Please enter a phone number.</p>
+	    <p class="help-block" ng-show="contactForm.phone.$error.maxlength && !contactForm.phone.$pristine">Please enter a valid phone number.</p>
 	  </div>
 
-	  <div class="form-group">
+	  <div class="form-group" ng-class="{
+			'has-error':!contactForm.address.$valid && (!contactForm.adress.$pristine || contactForm.$submitted),
+			'has-success':contactForm.address.$valid && (!contactForm.$pristine || contactForm.$submitted)
+		}">
 	    <label for="adressInput">Adress</label>
-	    <input type="adress" class="form-control" ng-model="form.adress" id="adressInput" aria-describedby="adress textbox" placeholder="Enter Adress"/>
+	    <input type="adress" class="form-control" ng-model="form.adress" id="adressInput" name="adress" aria-describedby="adress textbox" required="required" placeholder="Enter Adress"/>
+	    <p class="help-block" ng-show="contactForm.adress.$error.required && !contactForm.adress.$pristine">Please enter an adress.</p>
 	  </div>
 
-	  <div class="form-group">
+	  <div class="form-group" ng-class="{
+			'has-error':!contactForm.bio.$valid && (!contactForm.bio.$pristine || contactForm.$submitted),
+			'has-success':contactForm.bio.$valid && (!contactForm.$pristine || contactForm.$submitted)
+		}">
 	    <label for="bioInput">Bio</label>
-	    <textarea type="bio" class="form-control" ng-model="form.bio" id="bioInput" aria-describedby="bio textbox" placeholder="Describe your contact..."></textarea>
+	    <textarea type="bio" class="form-control" ng-model="form.bio" id="bioInput" name="bio" aria-describedby="bio textbox" required="required" placeholder="Describe your contact..."></textarea>
+	    <p class="help-block" ng-show="contactForm.bio.$error.required && !contactForm.bio.$pristine">Please describe your contact.</p>
 	  </div>
 
-	  <div class="form-group">
+	  <div class="form-group" ng-class="{
+			'has-error':!contactForm.avatar.$valid && (!contactForm.avatar.$pristine || contactForm.$submitted),
+			'has-success':contactForm.avatar.$valid && (!contactForm.$pristine || contactForm.$submitted)
+		}">
 	    <label for="avatarInput">Avatar</label>
-	    <input type="avatar" class="form-control" ng-model="form.avatar" id="avatarInput" aria-describedby="avatar field" placeholder="Enter an avatar link... "/>
+	    <input type="url" class="form-control" ng-model="form.avatar" id="avatarInput" name="avatar" aria-describedby="avatar field" required="required" placeholder="Enter an avatar link... "/>
+	    <p class="help-block" ng-show="contactForm.avatar.$error.required && !contactForm.avatar.$pristine">Please add an avatar.</p>
+	    <p class="help-block" ng-show="contactForm.avatar.$error.url && !contactForm.avatar.$pristine">Please enter a valid url.</p>
 	  </div>
 
-	  <div class="form-group">
-	  	<button class="btn btn-primary" ng-click="onSubmit()">Add Contact</button>
+	  <div class="form-group createButton">
+	  	<button class="btn btn-success" ng-click="onSubmit(contactForm.$valid)">Populate</button>
+	  	<button class="btn btn-primary" ng-click="onSubmit(contactForm.$valid)">Add Contact</button>
 	  </div>
 
 	</form>
-
 </div>
-<pre class="col-sm-6">{{createForm}}</pre>
+<!-- <pre class="col-sm-6">{{contactForm | json}}</pre> -->

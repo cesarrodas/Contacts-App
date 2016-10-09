@@ -14,8 +14,17 @@ angular.module('createContact', [])
 .controller('CreateCtrl', ['$scope', function CreateCtrl($scope){
 	$scope.form = {};
 
-	$scope.onSubmit = function () {
-		console.log("Hey i'm submitted!");
-		console.log($scope.form);
+	$scope.onSubmit = function (valid) {
+		if(valid){
+			console.log("Hey i'm submitted!");
+			console.log($scope.form);
+		} else {
+			console.log("Invalid Form!");
+		}
 	};
+
+	// $scope.fakeData = function () {
+	// 	$scope.form.name =
+	// };
 }]);
+//var faker = require('faker');
