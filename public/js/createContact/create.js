@@ -8,16 +8,21 @@ angular.module('createContact', [])
 					controller: "CreateCtrl as createCtrl",
 					templateUrl: "../../html/createContact/create.tmpl.html"
 				}
-			}
+			},
+			params: {
+				person: null
+  		}
 		});
 })
-.controller('CreateCtrl', ['$scope', function CreateCtrl($scope){
+.controller('CreateCtrl', ['$scope','$stateParams', function CreateCtrl($scope, $stateParams){
 	$scope.form = {};
 	$scope.create = $scope.$parent.addContact;
+	$scope.personToEdit = $stateParams.person;
 
 	$scope.onSubmit = function (valid) {
 		if(valid){
 			$scope.create($scope.form);
+			$scope.form = {};
 		} else {
 			console.log("Invalid Form!");
 		}

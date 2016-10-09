@@ -10,6 +10,16 @@
 
 .editButton {
 	position: absolute;
-	right: 30px;
-	top: 6px;
+	right: 66px;
+	top: 8px;
+}
+
+.deleteButton {
+	position: absolute;
+	right: 26px;
+	top: 8px;
+}
+
+.ghost {
+	opacity: .3;
 }
