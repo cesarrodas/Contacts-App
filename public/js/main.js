@@ -15,22 +15,23 @@ angular.module('contactApp', ['ui.router', 'contacts', 'createContact','contactA
 .controller('mainController', ['$scope', 'ContactsService', function($scope, ContactsService){
 	$scope.keys;
 	$scope.contacts;
+	$scope.personSelected;
 
 	$scope.addContact = function(contact){
 		ContactsService.createContact(contact);
 	};
 
 	$scope.changeContact = function(id, updatedContact) {
-		// var updating = $scope.keys[0];
-		// var fakeContact = {
-		// 	name: "Philip Defranco",
-		// 	age: 28,
-		// 	bio: "was up"
-		// }
 		ContactsService.updateContact(id, updatedContact);
 	};
 
+	$scope.setPerson = function(index){
+		$scope.personSelected = $scope.keys[index];
+	}
+
 	$scope.delContact = function(contactId){
+		console.log(contactId);
+		console.log("I HAVE BEEN CALLED PARENT");
 		$(".modal-backdrop").hide();
 		ContactsService.removeContact(contactId);
 	};

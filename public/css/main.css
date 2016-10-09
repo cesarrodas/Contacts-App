@@ -11,13 +11,13 @@
 .editButton {
 	position: absolute;
 	right: 66px;
-	top: 8px;
+	top: 28px;
 }
 
 .deleteButton {
 	position: absolute;
 	right: 26px;
-	top: 8px;
+	top: 28px;
 }
 
 .ghost {
@@ -26,4 +26,8 @@
 
 .clear {
 	clear: both;
+}
+
+.personPanel {
+	margin-top: 20px;
 }

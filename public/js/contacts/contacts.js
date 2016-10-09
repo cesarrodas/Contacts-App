@@ -5,12 +5,12 @@ angular.module('contacts', [])
 			url: '/',
 			views: {
 				'main@': {
-					controller: "ContactCtrl",
+					controller: "mainController",
 					templateUrl: "../../html/contacts/contacts.tmpl.html"
 				}
 			}
 		});
 })
-.controller('ContactCtrl', function ContactCtrl(){
-	var contactCtrl = this;
-});
+// .controller('ContactCtrl', ['$scope', function ContactCtrl($scope){
+// 	//$scope.deleteContact = $scope.$parent.delContact;
+// }]);
