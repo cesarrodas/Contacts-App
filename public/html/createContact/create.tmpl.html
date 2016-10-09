@@ -7,7 +7,7 @@
 <br/><br/><br/>
 <div>
 	<form class="col-sm-6 col-sm-offset-3" name="contactForm" novalidate="novalidate">
-		{{personToEdit}}
+		<!-- {{personToEdit}} -->
 		<div class="form-group" ng-class="{
 			'has-error':!contactForm.name.$valid && (!contactForm.name.$pristine || contactForm.$submitted),
 			'has-success':contactForm.name.$valid && (!contactForm.$pristine || contactForm.$submitted)
@@ -68,7 +68,7 @@
 	  <div class="form-group createButton">
 	  	<button class="btn btn-success" ng-click="fakeData()">Populate</button>
 	  	<button class="btn btn-primary" ng-click="onSubmit(contactForm.$valid)" ng-show="!personToEdit">Add Contact</button>
-	  	<button class="btn btn-primary" ng-click="onSubmit(contactForm.$valid)" ng-show="personToEdit">Update</button>
+	  	<button class="btn btn-primary" ng-click="update(personToEditId, form)" ng-show="personToEdit">Update</button>
 	  </div>
 
 	</form>

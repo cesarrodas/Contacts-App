@@ -13,12 +13,13 @@
     <p>Heeyooooo!</p>
     <p>{{keys[$index]}}</p>
 
-    <a ui-sref="contact.create({person: contact})" ng-hide="!options" ><button type="button" class="btn btn-default btn-info btn-sm editButton"><span class="glyphicon glyphicon-pencil"></span>
+    <a ui-sref="contact.create({id: keys[$index], person: contact})" ng-hide="!options" ><button type="button" class="btn btn-default btn-info btn-sm editButton"><span class="glyphicon glyphicon-pencil"></span>
 		</button></a>
 
 		<button type="button" ng-hide="!options" class="btn btn-default btn-danger btn-sm deleteButton">
   		<span class="glyphicon glyphicon-remove"></span>
 		</button>
+		<span class="clear"></span>
   </div>
 </div>
 <div>

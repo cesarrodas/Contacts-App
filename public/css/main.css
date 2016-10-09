@@ -23,3 +23,7 @@
 .ghost {
 	opacity: .3;
 }
+
+.clear {
+	clear: both;
+}

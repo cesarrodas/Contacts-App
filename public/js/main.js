@@ -20,14 +20,14 @@ angular.module('contactApp', ['ui.router', 'contacts', 'createContact','contactA
 		ContactsService.createContact(contact);
 	};
 
-	$scope.changeContact = function() {
-		var updating = $scope.keys[0];
-		var fakeContact = {
-			name: "Philip Defranco",
-			age: 28,
-			bio: "was up"
-		}
-		ContactsService.updateContact(updating, fakeContact);
+	$scope.changeContact = function(id, updatedContact) {
+		// var updating = $scope.keys[0];
+		// var fakeContact = {
+		// 	name: "Philip Defranco",
+		// 	age: 28,
+		// 	bio: "was up"
+		// }
+		ContactsService.updateContact(id, updatedContact);
 	};
 
 	$scope.delContact = function(){

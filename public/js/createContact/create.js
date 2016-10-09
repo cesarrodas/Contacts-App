@@ -10,14 +10,17 @@ angular.module('createContact', [])
 				}
 			},
 			params: {
-				person: null
+				person: null,
+				id: null
   		}
 		});
 })
 .controller('CreateCtrl', ['$scope','$stateParams', function CreateCtrl($scope, $stateParams){
-	$scope.form = {};
 	$scope.create = $scope.$parent.addContact;
+	$scope.update = $scope.$parent.changeContact;
 	$scope.personToEdit = $stateParams.person;
+	$scope.personToEditId = $stateParams.id;
+	$scope.form = $scope.personToEdit ? $scope.personToEdit : {};
 
 	$scope.onSubmit = function (valid) {
 		if(valid){
