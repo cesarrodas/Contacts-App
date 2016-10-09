@@ -31,3 +31,17 @@
 .personPanel {
 	margin-top: 20px;
 }
+
+.centering {
+	text-align: center;
+}
+
+.description {
+	padding-top: 10px;
+}
+
+img {
+    display: block;
+    margin: 10px auto;
+    border-radius: 50%;
+}
