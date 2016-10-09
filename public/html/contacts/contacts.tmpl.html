@@ -13,16 +13,34 @@
     <p>Heeyooooo!</p>
     <p>{{keys[$index]}}</p>
 
-    <a ui-sref="contact.create({id: keys[$index], person: contact})" ng-hide="!options" ><button type="button" class="btn btn-default btn-info btn-sm editButton"><span class="glyphicon glyphicon-pencil"></span>
+    <a ui-sref="contact.create({id: keys[$index], person: contact})" ng-hide="!options" ><button type="button" class="btn btn-default btn-info btn-sm editButton"><span class="glyphicon glyphicon-pencil" aria-describedby="edit button"></span>
 		</button></a>
 
-		<button type="button" ng-hide="!options" class="btn btn-default btn-danger btn-sm deleteButton">
-  		<span class="glyphicon glyphicon-remove"></span>
+		<button type="button" ng-hide="!options" data-toggle="modal" data-target="#deleteModal"class="btn btn-default btn-danger btn-sm deleteButton">
+  		<span class="glyphicon glyphicon-remove" aria-describedby="delete button"></span>
 		</button>
 		<span class="clear"></span>
   </div>
 </div>
 <div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Delete</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this contact?&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="deleteButton" class="btn btn-danger" data-dismiss="modal" ng-click="delContact(keys[$index])">Delete</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <!--     <button type="button" ng-hide="!options" class="btn btn-default btn-info btn-sm editButton">
   		<a ui-sref="contact.create({person: contact})"><span class="glyphicon glyphicon-pencil"></span></a>

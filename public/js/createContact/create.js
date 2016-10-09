@@ -15,9 +15,8 @@ angular.module('createContact', [])
   		}
 		});
 })
-.controller('CreateCtrl', ['$scope','$stateParams', function CreateCtrl($scope, $stateParams){
+.controller('CreateCtrl', ['$scope', '$state','$stateParams', function CreateCtrl($scope, $state, $stateParams){
 	$scope.create = $scope.$parent.addContact;
-	$scope.update = $scope.$parent.changeContact;
 	$scope.personToEdit = $stateParams.person;
 	$scope.personToEditId = $stateParams.id;
 	$scope.form = $scope.personToEdit ? $scope.personToEdit : {};
@@ -30,6 +29,12 @@ angular.module('createContact', [])
 			console.log("Invalid Form!");
 		}
 	};
+
+	$scope.update = function(id, updatedContact){
+		$scope.$parent.changeContact(id, updatedContact);
+		$scope.form = {};
+		$state.go('contact.contacts');
+	}
 
 	$scope.randomNumber = function() {
 		var number = Math.floor(Math.random() * 10000000000);

@@ -30,9 +30,9 @@ angular.module('contactApp', ['ui.router', 'contacts', 'createContact','contactA
 		ContactsService.updateContact(id, updatedContact);
 	};
 
-	$scope.delContact = function(){
-		var deleting = $scope.keys[0];
-		ContactsService.removeContact(deleting);
+	$scope.delContact = function(contactId){
+		$(".modal-backdrop").hide();
+		ContactsService.removeContact(contactId);
 	};
 
 	$scope.getAllContacts = function() {
@@ -55,4 +55,3 @@ angular.module('contactApp', ['ui.router', 'contacts', 'createContact','contactA
 	});
 
 }]);
-
