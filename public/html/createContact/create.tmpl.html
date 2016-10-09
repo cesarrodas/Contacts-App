@@ -38,12 +38,12 @@
 	  </div>
 
 	  <div class="form-group" ng-class="{
-			'has-error':!contactForm.address.$valid && (!contactForm.adress.$pristine || contactForm.$submitted),
+			'has-error':!contactForm.address.$valid && (!contactForm.address.$pristine || contactForm.$submitted),
 			'has-success':contactForm.address.$valid && (!contactForm.$pristine || contactForm.$submitted)
 		}">
-	    <label for="adressInput">Adress</label>
-	    <input type="adress" class="form-control" ng-model="form.adress" id="adressInput" name="adress" aria-describedby="adress textbox" required="required" placeholder="Enter Adress"/>
-	    <p class="help-block" ng-show="contactForm.adress.$error.required && !contactForm.adress.$pristine">Please enter an adress.</p>
+	    <label for="addressInput">Adress</label>
+	    <input type="address" class="form-control" ng-model="form.address" id="addressInput" name="address" aria-describedby="address textbox" required="required" placeholder="Enter Address"/>
+	    <p class="help-block" ng-show="contactForm.address.$error.required && !contactForm.address.$pristine">Please enter an adress.</p>
 	  </div>
 
 	  <div class="form-group" ng-class="{
@@ -66,7 +66,7 @@
 	  </div>
 
 	  <div class="form-group createButton">
-	  	<button class="btn btn-success" ng-click="onSubmit(contactForm.$valid)">Populate</button>
+	  	<button class="btn btn-success" ng-click="fakeData()">Populate</button>
 	  	<button class="btn btn-primary" ng-click="onSubmit(contactForm.$valid)">Add Contact</button>
 	  </div>
 

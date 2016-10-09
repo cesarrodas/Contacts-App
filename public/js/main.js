@@ -16,13 +16,8 @@ angular.module('contactApp', ['ui.router', 'contacts', 'createContact','contactA
 	$scope.keys;
 	$scope.contacts;
 
-	$scope.addContact = function(){
-		var fakeContact = {
-			name: "Candace",
-			age: 20,
-			bio: "this is my line"
-		}
-		ContactsService.createContact(fakeContact);
+	$scope.addContact = function(contact){
+		ContactsService.createContact(contact);
 	};
 
 	$scope.changeContact = function() {
