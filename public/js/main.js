@@ -1,4 +1,4 @@
-angular.module('contactApp', ['ui.router', 'angular-ladda', 'contacts', 'createContact','contactApp.models.contacts'])
+angular.module('contactApp', ['ui.router', 'angular-ladda','toaster', 'ngAnimate', 'contacts', 'createContact','contactApp.models.contacts'])
 
 .config(function ($stateProvider, $urlRouterProvider) {
 
