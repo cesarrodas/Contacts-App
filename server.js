@@ -14,6 +14,8 @@ app.use(function(req, res, next){
 
 app.use(express.static('public'));
 
+//app.use('/vendors', express.static(__dirname + '/public/vendors'));
+
 app.listen(PORT, function() {
   console.log('Express server is up on port ' + PORT);
 });
