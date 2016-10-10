@@ -20,20 +20,38 @@ angular.module('createContact', [])
 	$scope.personToEdit = $stateParams.person;
 	$scope.personToEditId = $stateParams.id;
 	$scope.form = $scope.personToEdit ? $scope.personToEdit : {};
+	$scope.submitting = false;
 
 	$scope.onSubmit = function (valid) {
+		$scope.submitting = true;
 		if(valid){
 			$scope.create($scope.form);
 			$scope.form = {};
+			window.setTimeout(function(){
+				$scope.$apply(function(){
+					$scope.submitting = false;
+				});
+			}, 300);
 		} else {
-			console.log("Invalid Form!");
+			window.setTimeout(function(){
+				console.log("Invalid Form!");
+				$scope.$apply(function(){
+					$scope.submitting = false;
+				});
+			}, 300);
 		}
 	};
 
 	$scope.update = function(id, updatedContact){
+		$scope.submitting = true;
 		$scope.$parent.changeContact(id, updatedContact);
 		$scope.form = {};
-		$state.go('contact.contacts');
+		window.setTimeout(function(){
+			$scope.$apply(function(){
+				$scope.submitting = false;
+				$state.go('contact.contacts');
+			});
+		}, 300);
 	}
 
 	$scope.randomNumber = function() {

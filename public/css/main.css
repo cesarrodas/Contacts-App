@@ -45,3 +45,15 @@ img {
     margin: 10px auto;
     border-radius: 50%;
 }
+
+
+button,
+button:active,
+button:focus,
+button:hover,
+.btn,
+.btn:active,
+.btn:focus,
+.btn:hover{
+    outline:none !important;
+}

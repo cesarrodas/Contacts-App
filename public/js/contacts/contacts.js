@@ -10,7 +10,4 @@ angular.module('contacts', [])
 				}
 			}
 		});
-})
-// .controller('ContactCtrl', ['$scope', function ContactCtrl($scope){
-// 	//$scope.deleteContact = $scope.$parent.delContact;
-// }]);
+});

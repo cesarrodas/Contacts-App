@@ -67,8 +67,8 @@
 
 	  <div class="form-group createButton">
 	  	<button class="btn btn-success" ng-click="fakeData()">Populate</button>
-	  	<button class="btn btn-primary" ng-click="onSubmit(contactForm.$valid)" ng-show="!personToEdit">Add Contact</button>
-	  	<button class="btn btn-primary" ng-click="update(personToEditId, form)" ng-show="personToEdit">Update</button>
+	  	<button class="btn btn-primary" ladda="submitting" data-style="expand-right" ng-click="onSubmit(contactForm.$valid)" ng-show="!personToEdit"><span ng-show="!submitting">Add Contact</span><span ng-show="submitting">Adding Contact</span></button>
+	  	<button class="btn btn-primary" ladda="submitting" data-style="expand-right" ng-click="update(personToEditId, form)" ng-show="personToEdit"><span ng-show="!submitting">Update</span><span ng-show="submitting">Updating</span></button>
 	  </div>
 
 	</form>
