@@ -1,5 +1,5 @@
 node_modules/
 public/bundle.js
-public/config/
+.env
 public/vendors/
 public/js/models/contacts-model.js
