@@ -8,12 +8,12 @@ last time you saw them.
 * html
 * css (twitter bootstrap)
 * javascript:
-	*angular1
-	*ui-router
-	*firebase
-	*jquery for bootstrap
-	*angular ladda
-	*faker (to populate data)
+	* angular1
+	* ui-router
+	* firebase
+	* jquery for bootstrap
+	* angular ladda
+	* faker (to populate data)
 
 
 This application is hosted [here!](http://still-citadel-97525.herokuapp.com/)
