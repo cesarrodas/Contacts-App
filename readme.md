@@ -14,11 +14,11 @@ last time you saw them.
 	* jquery for bootstrap
 	* angular ladda
 	* faker (to populate data)
-
+	* express
 
 This application is hosted [here!](http://still-citadel-97525.herokuapp.com/)
 
 ###install
 npm install
-This app uses bower for vendor files.
+This app uses bower to install vendor files.
 Firebase environment variables have to be added by the user in a .env file
