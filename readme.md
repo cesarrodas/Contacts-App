@@ -1,8 +1,6 @@
 #Your Contacts App
 
-This web app allows you to create and organize contacts based on information you have gathered,
-about that person. You can even include a description in order to remember the
-last time you saw them.
+This web app allows you to create and organize contacts based on contact information you know or have gathered about a person. You can even include a description in order to remember thelast time you saw them.
 
 **Technologies** used on this project:
 * html
@@ -18,7 +16,7 @@ last time you saw them.
 
 This application is hosted [here!](http://still-citadel-97525.herokuapp.com/)
 
-###install
+###Install
 npm install
 This app uses bower to install vendor files.
 Firebase environment variables have to be added by the user in a .env file
