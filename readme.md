@@ -14,7 +14,7 @@ This web app allows you to create and organize contacts based on contact informa
 	* faker (to populate data)
 	* express
 
-This application is hosted [here!](http://still-citadel-97525.herokuapp.com/)
+This application is hosted [here!](http://contacthooray.herokuapp.com/)
 
 ###Install
 npm install
