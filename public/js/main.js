@@ -12,10 +12,11 @@ angular.module('contactApp', ['ui.router', 'angular-ladda','toaster', 'ngAnimate
 
 })
 
-.controller('mainController', ['$scope', 'ContactsService', function($scope, ContactsService){
+.controller('mainController', ['$scope', '$window', '$timeout', 'ContactsService', function($scope, $window, $timeout, ContactsService){
 	$scope.keys;
 	$scope.contacts;
 	$scope.personSelected;
+	$scope.windowWidth = $window.innerWidth;
 
 	$scope.addContact = function(contact){
 		ContactsService.createContact(contact);
@@ -46,6 +47,12 @@ angular.module('contactApp', ['ui.router', 'angular-ladda','toaster', 'ngAnimate
   		console.log("Failed to load Contacts " + errorObject.code);
 		});
 	}
+
+	$window.onresize = function(event) {
+		$timeout(function() {
+			$scope.windowWidth = $window.innerWidth;
+		});
+	};
 
 	// Updates all the contacts
 	contactsRef.on("value", function(snapshot) {

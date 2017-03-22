@@ -1,5 +1,5 @@
 <div>
-<div class="container col-sm-12">
+<div class="container col-xs-12">
   <ul class="nav nav-tabs" >
     <li class="active" ><a ui-sref="contact.contacts">Contacts</a></li>
     <li><a ui-sref="contact.create">Create</a></li>
@@ -7,7 +7,7 @@
 </div>
 <br/><br/><br/><br/>
 <div class="row">
-  <div class="col-sm-4" ng-repeat-start="contact in contacts">
+  <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-lg-4 col-lg-offset-0 col-xl-4 col-xl-offset-0" ng-repeat-start="contact in contacts">
     <div ng-mouseenter="setPerson($index)">
     	<div class="panel panel-primary personPanel" ng-mouseenter="options=true" ng-mouseleave="options=false">
     		<div class="panel-heading"><span ng-class="{ 'ghost': options }">{{contact.name}}</span></div>
@@ -31,7 +31,7 @@
     	</div>
     </div>
   </div>
-  <div class="clearfix" ng-if="$index%3==2"></div>
+  <div class="clearfix" ng-if="$index%3==2 && windowWidth >= 1200"></div>
   <div ng-repeat-end=""></div>
 </div>
 
